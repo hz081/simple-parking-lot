@@ -46,9 +46,20 @@ main = () => {
                 break;
 
             case PARK:
-                parkingLot[lastIndex + 1] = param1;
-                lastIndex++;
-                console.log(`Allocated slot number: ${lastIndex + 1}`);
+                if ((parkingLot[lastIndex + 1] === null || !parkingLot[lastIndex + 1]) && lastIndex + 1 < maxSlot) {
+                    parkingLot[lastIndex + 1] = param1;
+                    lastIndex++;
+                    console.log(`Allocated slot number: ${lastIndex + 1}`);
+                } else {
+                    for(let i=0; i < maxSlot; i++) {
+                        if (parkingLot[i] === null || !parkingLot[i]) {
+                            parkingLot[i] = param1;
+                            console.log(`Allocated slot number: ${i + 1}`);
+                            lastIndex = i;
+                            return;
+                        }
+                    }
+                }
                 break;
             default: break;
         }
