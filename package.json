@@ -1,0 +1,15 @@
+{
+    "name": "simple-parking-lot",
+    "version": "0.0.1",
+    "description": "backend",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "build": "./node_modules/.bin/pkg index.js --target node12-linux-x64"
+    },
+    "author": "hantze sudarma",
+    "license": "ISC",
+    "devDependencies": {
+        "pkg": "^4.4.9"
+    }
+}
