@@ -53,6 +53,7 @@ main = () => {
                             return;
                         }
                     }
+                    if (!available) console.log('Sorry, parking lot is full');
                 }
                 break;
             default: break;
