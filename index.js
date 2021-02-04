@@ -38,6 +38,14 @@ main = () => {
         const command = lineParsed[0];
         const param1 = lineParsed[1] ? lineParsed[1] : '';
         const param2 = lineParsed[2] ? lineParsed[2] : '';
+
+        switch(command) {
+            case CREATE_PARKING_LOT:
+                maxSlot += Number(param1);
+                console.log(`Created parking lot with ${param1} slots`);
+                break;
+            default: break;
+        }
     });
 }
 
