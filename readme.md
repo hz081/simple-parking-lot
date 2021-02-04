@@ -11,3 +11,9 @@ How to run the code:
 ```
 ./bin/parking_lot bin/file_input.txt
 ```
+
+How to run the test:
+
+```
+yarn test
+```
