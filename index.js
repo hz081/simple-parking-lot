@@ -5,6 +5,13 @@ const parseArgument = (args) => {
     return result[0];
 }
 
+const calculateBill = (param) => {
+    if (param <= 2) return 10;
+    else {
+        return (param - 1) * 10;
+    }
+}
+
 main = () => {
     let args, data, lines;
     let maxSlot = 0, lastIndex = -1;
@@ -55,6 +62,20 @@ main = () => {
                     }
                     if (!available) console.log('Sorry, parking lot is full');
                 }
+                break;
+            case LEAVE:
+                let found = false;
+                for(let i=0; i < maxSlot; i++) {
+                    if (parkingLot[i] === param1) {
+                        parkingLot[i] = null;
+                        const bill = calculateBill(param2);
+                        console.log(`Registration number ${param1} with Slot Number ${i + 1} is free with Charge ${bill}`);
+                        lastIndex = i;
+                        found = true;
+                        return;
+                    }
+                }
+                if (!found) console.log(`Registration number ${param1} not found`);
                 break;
             default: break;
         }
