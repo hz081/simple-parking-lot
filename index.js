@@ -84,6 +84,12 @@ main = () => {
                     }
                     if (!found) console.log(`Registration number ${param1} not found`);
                     break;
+
+            case STATUS:
+                console.log('Slot No.  Registration No.');
+                for(let i=0; i < maxSlot; i++)
+                    if (parkingLot[i] !== null || parkingLot[i]) console.log(`${i+1} ${parkingLot[i]}`);
+                break;
             default: break;
         }
     });
