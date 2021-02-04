@@ -51,14 +51,17 @@ main = () => {
                     lastIndex++;
                     console.log(`Allocated slot number: ${lastIndex + 1}`);
                 } else {
+                    let available = false;
                     for(let i=0; i < maxSlot; i++) {
                         if (parkingLot[i] === null || !parkingLot[i]) {
                             parkingLot[i] = param1;
                             console.log(`Allocated slot number: ${i + 1}`);
                             lastIndex = i;
+                            available = true;
                             return;
                         }
                     }
+                    if (!available) console.log('Sorry, parking lot is full');
                 }
                 break;
             default: break;
