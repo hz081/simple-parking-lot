@@ -37,6 +37,11 @@ main = () => {
                 maxSlot += Number(param1);
                 console.log(`Created parking lot with ${param1} slots`);
                 break;
+            case PARK:
+                parkingLot[lastIndex + 1] = param1;
+                lastIndex++;
+                console.log(`Allocated slot number: ${lastIndex + 1}`);
+                break;
             default: break;
         }
     });
