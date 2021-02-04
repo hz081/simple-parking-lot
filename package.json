@@ -5,11 +5,17 @@
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
-        "build": "./node_modules/.bin/pkg index.js --target node12-linux-x64"
+        "build": "./node_modules/.bin/pkg index.js --target node12-linux-x64",
+        "test": "./node_modules/.bin/mocha main.test.js"
     },
     "author": "hantze sudarma",
     "license": "ISC",
     "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^8.2.1",
         "pkg": "^4.4.9"
+    },
+    "dependencies": {
+        "test-console": "^1.1.0"
     }
 }
