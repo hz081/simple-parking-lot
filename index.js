@@ -6,7 +6,14 @@ const parseArgument = (args) => {
 }
 
 main = () => {
+    let args;
 
+    try {
+        args = parseArgument(process.argv);
+    } catch (e) {
+        console.log('cannot parse the arguments', e);
+        exit(1);
+    }
 }
 
 main();
