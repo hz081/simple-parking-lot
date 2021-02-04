@@ -28,6 +28,7 @@ main = () => {
         console.log('cannot parse the arguments', e);
         exit(1);
     }
+
     try {
         data = fs.readFileSync(args, 'utf8');
         lines = data.split('\n');
@@ -35,7 +36,6 @@ main = () => {
         console.log('error while reading the data', e);
         exit(1);
     }
-
 
     lines.forEach((line) => {
         const lineParsed = line.split(' ');
@@ -90,6 +90,7 @@ main = () => {
                 for(let i=0; i < maxSlot; i++)
                     if (parkingLot[i] !== null || parkingLot[i]) console.log(`${i+1} ${parkingLot[i]}`);
                 break;
+
             default: break;
         }
     });
